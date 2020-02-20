@@ -22,9 +22,29 @@ app.post('/api/notes', (req, res) => {
   notes.push(newNote);
   fs.writeFileSync(
     path.join(__dirname, '/db/db.json'),
-    JSON.stringify({notes}, null, 2)
+    JSON.stringify(notes, null, 2)
   );
   res.json(newNote);
+});
+
+app.delete('/api/notes/:id', (req, res) => {
+  //remove the appropriate note
+  const deleteIndex = req.params.id;
+  notes.splice(deleteIndex, 1);
+
+  //reassign the noteids
+  for(let i = 0; i < notes.length; i++){
+    console.log(notes[i]);
+    notes[i].id = i;
+    console.log(notes[i]);
+  }
+
+  fs.writeFileSync(
+    path.join(__dirname, '/db/db.json'), 
+    JSON.stringify(notes, null, 2)
+  );
+  //update the db.json file
+  res.json(req.body);
 });
 
 // HTML ROUTES ------------------------------------------------------------------------

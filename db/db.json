@@ -1,14 +1,12 @@
-{
-  "notes": [
-    {
-      "title": "Test Title",
-      "text": "Test text",
-      "id": 0
-    },
-    {
-      "title": "mew",
-      "text": "newNote",
-      "id": 1
-    }
-  ]
-}
+[
+  {
+    "title": "Test Title",
+    "text": "Test text",
+    "id": 0
+  },
+  {
+    "title": "new test",
+    "text": "brwpjg\nglwrng\nwgklwrnml",
+    "id": 1
+  }
+]
